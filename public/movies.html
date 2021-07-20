@@ -1,0 +1,218 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - Star Wars</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/svg" href="./img/yodasvg.svg" />
+</head>
+
+<body class="min-h-screen overflow-x-hidden">
+    <!-- Audio -->
+    <audio id="main" preload="auto" autoplay>
+        <source src="../starwars.mp3">
+    </audio>
+
+    <audio id="audio" preload="auto">
+        <source src="../lsaber.mp3">
+    </audio>
+
+    <!--Header-->
+    <header id="menuBox" class="absolute top-0 left-0 w-full py-1 px-4 flex justify-between items-center z-10000">
+        <!--diving main into two section. i) for logo/name    ii) for navbar-->
+        <div class=" transform rotate-90">
+
+            <div class="left-16 relative w-36 h-20 lightsaber">
+                <label for="darth-vader-example"></label>
+                <input type="checkbox" id="darth-vader-example" checked="checked">
+                <div class="switch"></div>
+                <div class="plasma vader"></div>
+            </div>
+
+        </div>
+
+        <ul id="men-items" class="flex text-yellow-400 font-medium justify-center items-center login-box">
+            <li class="ml-5 px-sm py-1 active:bg-green-700"><a href="index.html" class="">Home</a></li>
+            <li class="ml-5 px-2 py-1 "><a href="characters.html">Characters</a>
+            </li>
+            <li class="ml-5 px-3 py-1 rounded font-semibold bg-yellow-600 text-gray-800 ">
+                <button id="playbutton" class="hover:text-white">Stop</button></a>
+            </li>
+            </div>
+
+        </ul>
+
+    </header>
+
+
+
+    <div id="prelude" style="color: gold;">Welcome to the movie page ....</div>
+    <div id="intro">
+        <canvas id="canvas"></canvas>
+        <div id="introContent">
+            <h2>Star Wars<br /><br />Movies</h2>
+            <h2>Episode 1: The Phantom Menace</h2>
+            <h2>Episode 2: Attack of the Clones</h2>
+            <h2>Episode 3: Revenge of the Sith</h2>
+            <h2>Episode 4: A New Hope</h2>
+            <h2>Episode 5: The Empire Strikes Back</h2>
+            <h2>Episode 6: Return of the Jedi</h2>
+            <h2>Episode 7: The Force Awakens</h2>
+            <h2>Episode 8: The Last Jedi</h2>
+            <h2>Episode 9: The Rise of Skywalker</h2>
+        </div>
+    </div>
+    </div>
+
+    <div id="after" class="my-36 ">
+        <div id="content">
+            <details class="bg-yellow-400">
+                <summary class="text-black">Episode 1: The Phantom Menace</summary>
+                <p>
+                    After a millennia, an ancient evil returns seeking revenge. Meanwhile, Jedi Knight Qui-Gon Jinn
+                    discovers Anakin Skywalker: a young slave boy unusually strong with the Force.
+                </p>
+            </details>
+            <details class="bg-yellow-400">
+                <summary class="text-black">Episode 2: The Attack of the Clones</summary>
+                <p>
+                    Following an assassination attempt on Senator Padmé Amidala, Jedi Knights Anakin Skywalker and
+                    Obi-Wan Kenobi investigate a mysterious plot that could change the galaxy forever.
+                </p>
+            </details>
+            <details class="bg-yellow-400">
+                <summary class="text-black">Episode 3: Revenge of the Sith</summary>
+                <p>
+                    The evil Darth Sidious enacts his final plan for unlimited power -- and the heroic Jedi Anakin
+                    Skywalker must choose a side.
+                </p>
+            </details>
+
+            <details class="bg-yellow-400">
+                <summary class="text-black">Episode 4: A New Hope</summary>
+                <p>
+                    With the planet-destroying power of the Death Star, the Empire looks to cement its grip on the
+                    galaxy. Meanwhile, farm boy Luke Skywalker rises to face his destiny.
+                </p>
+            </details>
+            <details class="bg-yellow-400">
+                <summary class="text-black">Episode 5: The Empire Strikes Back</summary>
+                <p>
+                    While the Death Star has been destroyed, the battle between the Empire and the Rebel Alliance
+                    rages on...and the evil Darth Vader continues his relentless search for Luke Skywalker.
+                </p>
+            </details>
+            <details class="bg-yellow-400">
+                <summary class="text-black">Episode 6: Return of the Jedi</summary>
+                <p>
+                    Luke Skywalker leads a mission to rescue his friend Han Solo from the clutches of Jabba the
+                    Hutt, while the Emperor seeks to destroy the Rebellion once and for all with a second dreaded
+                    Death Star.
+                </p>
+            </details>
+            <details class="bg-yellow-400">
+                <summary class="text-black">Episode 7: The Force Awakens</summary>
+                <p>
+                    Thirty years after the Battle of Endor, a new threat has risen in the form of the First Order
+                    and the villainous Kylo Ren. Meanwhile, Rey, a young scavenger, discovers powers that will
+                    change her life -- and possibly save the galaxy.
+                </p>
+            </details>
+            <details class="bg-yellow-400">
+                <summary class="text-black">Episode 8: The Last Jedi</summary>
+                <p>
+                    Rey has found the legendary Luke Skywalker, hoping to be trained in the ways of the Force.
+                    Meanwhile, the First Order seeks to destroy the remnants of the Resistance and rule the galaxy
+                    unopposed.
+                </p>
+            </details>
+            <details class="bg-yellow-400">
+                <summary class="text-black">Episode 9: The Rise of Skywalker</summary>
+                <p>
+                    A powerful enemy returns and Rey must face her destiny.
+                </p>
+            </details>
+        </div>
+    </div>
+
+
+
+    <div id="foot" class="absolute bg-yellow-400 w-full h-10 p-20">
+
+        <p class="credits text-black font-semibold flex justify-center items-center">
+            Star Wars &copy;&nbsp;Star Wars is a registered trademark of Lucasfilm Ltd.
+        </p>
+    </div>
+
+
+
+
+    <script>
+
+        let lbsaber = document.getElementById("darth-vader-example");
+        let playbutton = document.getElementById("playbutton");
+        let playmain = true;
+        let menuBox = document.getElementById("men-items");
+        let animation = true;
+        let introContent = document.getElementById("introContent");
+        let prelude = document.getElementById("prelude");
+        let afterContent = document.getElementById("after");
+        let foot = document.getElementById("foot");
+
+
+        lbsaber.addEventListener('click', function () {
+            if (this.checked) {
+                document.getElementById("audio").play();
+                menuBox.style.display = "flex";
+            } else {
+                document.getElementById("audio").pause();
+                menuBox.style.display = "none";
+            }
+        });
+
+        playbutton.addEventListener('click', function () {
+            playmain = !playmain;
+            animation = !animation;
+            if (this.click && playmain == true) {
+                document.getElementById("main").play();
+                this.innerText = "Stop";
+                introContent.classList.remove("pause");
+                prelude.classList.remove("pause");
+                introContent.style.display = "block";
+                prelude.style.display = "block";
+                afterContent.style.display = "none";
+                foot.style.display = "none";
+
+
+            } else {
+                document.getElementById("main").pause();
+                document.getElementById("main").currentTime = 0;
+                this.innerText = "Play";
+                introContent.classList.add("pause", "skipcontent");
+                prelude.classList.add("pause", "skipcontent");
+                introContent.style.display = "none";
+                prelude.style.display = "none";
+                afterContent.style.display = "block";
+                foot.style.display = "block";
+
+            }
+        });
+
+        foot.style.display = "none";
+        afterContent.style.display = "none";
+
+        introContent.addEventListener("animationend", function () {
+            afterContent.style.display = "block";
+            foot.style.display = "block";
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
