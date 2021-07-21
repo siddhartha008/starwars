@@ -8,6 +8,10 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/svg" href="./img/yodasvg.svg" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+
+
+
 </head>
 
 <body class="min-h-screen overflow-x-hidden">
@@ -36,66 +40,76 @@
             <li class="ml-5 px-2 py-1 "><a href="movies.html">Movies</a>
             </li>
             <li class="ml-5 px-3 py-1 rounded font-semibold bg-yellow-600 text-gray-800 ">
-                <button id="playbutton" class="hover:text-white">Play</button>
+                <button id="playbutton" class="hover:text-white"><a
+                        href="https://www.imdb.com/title/tt0076759/fullcredits?ref_=tt_cl_sm#cast"
+                        target="_blank">Characters</a> </button>
             </li>
             </div>
         </ul>
     </header>
 
-    <section class="overflow-hidden  relative w-full h-screen p-32 flex justify-center items-stretch ">
-        <img id="bg" class="absolute top-0 left-0 w-full h-full object-cover" src="./img/starsss.jpeg" alt="starwars">
-        <img id="name" class="absolute z-10 top-1" src="./img/sidsid.svg" alt="mesasid">
-        <img id="cloud" class="absolute z-10  bottom-2" src="./img/badal.svg" alt="cloud">
-        <img src="./img/yodasvg.svg" id="logoLeft" class="absolute z-10 bottom-12 w-36 h-36" alt="siddhartha-img">
-    </section>
-
-    <div class="relative w-full h-screen p-32 flex justify-center items-stretch skewed-bg">
-        <img id="stars" class="absolute top-0 left-0 w-full h-full object-cover " src="./img/starsss.jpeg" alt="">
-        <img id="hansolo" class="absolute z-10 top-0 w-72 h-72" src="./img/hansolo.svg" alt="">
-        <img class="relative -my-15" src="./img/mtfbwy.png" alt="">
-    </div>
 
 
+    <div class="grid mt-9">
+    <input class="px-5" type="radio" name="position" checked />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <main class="mt-24 mb-3 " id="carousel">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <main>
+        </div>
 
 
-    <footer class="footer">
-        <p class="credits">
-            Star Wars &copy;&nbsp;Star Wars is a registered trademark of Lucasfilm Ltd.
-        </p>
-    </footer>
 
-    <script>
-        let bg = document.getElementById('bg');
-        let names = document.getElementById('name');
-        let cloud = document.getElementById('cloud');
-        let hansolo = document.getElementById('hansolo');
-        let header = document.querySelector("header");
-        let logo = document.getElementById("logoLeft");
-        let imgdiv = document.getElementById("imgdiv");
-        let lbsaber = document.getElementById("darth-vader-example");
-        let menuBox = document.getElementById("men-items");
 
-        window.addEventListener('scroll', function () {
-            let value = window.scrollY;
-            cloud.style.left = value * 1.25 + 'px';
-            names.style.top = 1 + value * 1.05 + 'px';
-            hansolo.style.right = value * 1.25 + 'px';
-            hansolo.style.transform = 'translateX(' + (value * 0.5) + 'px) translateY(' + (value * 0.5) + 'px)';
-            bg.style.top = value * 0.5 + 'px';
-            imgdiv.style.top = value * 0.5 + 'px';
-        });
 
-        lbsaber.addEventListener('click', function () {
-            if (this.checked) {
-                document.getElementById("audio").play();
-                menuBox.style.display = "flex";
-            } else {
-                document.getElementById("audio").pause();
-                menuBox.style.display = "none";
-            }
-        });
 
-    </script>
+            <div id="foot" class="absolute bg-yellow-400 w-full h-7 p-20 mt-11">
+                <p class="credits text-black font-semibold flex justify-center items-center">
+                    Star Wars &copy;&nbsp;Star Wars is a registered trademark of Lucasfilm Ltd.
+                </p>
+            </div>
+
+
+
+            <script>
+                let bg = document.getElementById('bg');
+                let names = document.getElementById('name');
+                let cloud = document.getElementById('cloud');
+                let hansolo = document.getElementById('hansolo');
+                let header = document.querySelector("header");
+                let logo = document.getElementById("logoLeft");
+                let imgdiv = document.getElementById("imgdiv");
+                let lbsaber = document.getElementById("darth-vader-example");
+                let menuBox = document.getElementById("men-items");
+
+                window.addEventListener('scroll', function () {
+                    let value = window.scrollY;
+                    cloud.style.left = value * 1.25 + 'px';
+                    names.style.top = 1 + value * 1.05 + 'px';
+                    hansolo.style.right = value * 1.25 + 'px';
+                    hansolo.style.transform = 'translateX(' + (value * 0.5) + 'px) translateY(' + (value * 0.5) + 'px)';
+                    bg.style.top = value * 0.5 + 'px';
+                    imgdiv.style.top = value * 0.5 + 'px';
+                });
+
+                lbsaber.addEventListener('click', function () {
+                    if (this.checked) {
+                        document.getElementById("audio").play();
+                        menuBox.style.display = "flex";
+                    } else {
+                        document.getElementById("audio").pause();
+                        menuBox.style.display = "none";
+                    }
+                });
+
+            </script>
 
 
 </body>

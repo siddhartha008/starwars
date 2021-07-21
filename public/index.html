@@ -18,9 +18,9 @@
     </audio>
 
     <!--Header-->
-    <header id="menuBox" class="absolute top-0 left-0 w-full py-1 px-4 flex justify-between items-center z-10000">
-        <!--diving main into two section. i) for logo/name    ii) for navbar-->
-        <div class=" transform rotate-90">
+    <!-- <nav id="menuBox" class="absolute top-0 left-0 w-full py-1 px-4 flex md:justify-between items-center z-10000"> -->
+    <!--diving main into two section. i) for logo/name    ii) for navbar-->
+    <!-- <div class=" transform rotate-90">
 
             <div class="left-16 relative w-36 h-20 lightsaber">
                 <label for="darth-vader-example"></label>
@@ -31,7 +31,8 @@
 
         </div>
 
-        <ul id="men-items" class="flex text-yellow-400 font-medium justify-center items-center login-box">
+        <ul id="men-items"
+            class="hidden md:flex md:flex-row text-yellow-400 font-medium justify-center items-center login-box">
             <li class="ml-5 px-sm py-1 active:bg-green-700"><a href="movies.html" class="">Movies</a></li>
             <li class="ml-5 px-2 py-1 "><a href="characters.html">Characters</a>
             </li>
@@ -41,7 +42,60 @@
             </li>
             </div>
         </ul>
-    </header>
+    </nav> -->
+
+    <nav id="menuBox" class="absolute top-0 w-full z-10000">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <!-- Website Logo -->
+                    <div class="transform rotate-90">
+
+                        <div class="left-16 relative w-36 h-20 lightsaber">
+                            <label for="darth-vader-example"></label>
+                            <input type="checkbox" id="darth-vader-example" checked="checked">
+                            <div class="switch"></div>
+                            <div class="plasma vader"></div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!-- Navbar items -->
+                <div id="men-items" class="hidden md:flex items-center space-x-3 men-item">
+                    <a href="movies.html"
+                        class="py-2 px-2 font-medium text-yellow-500 transition duration-300">Movies</a>
+                    <a href="characters.html"
+                        class="py-2 px-2 font-medium text-yellow-500 transition duration-300">Characters</a>
+                    <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU&t=2s" target="_blank"
+                        class="py-2 px-2 font-medium text-white bg-yellow-600 rounded hover:bg-pink-600 transition duration-300">Watch</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex ">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class=" w-6 h-6 text-red-500 hover:text-yellow-500 " x-show="!showMenu" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu bg-transparent absolute -mt-4">
+            <ul class="flex left-5 ">
+                <li class=" border-1 border-yellow-400 rounded-md ml-28 mr-4"><a href="movies.html"
+                        class="text-sm px-2 text-white">Movies</a></li>
+                <li class="border-1 border-yellow-400 rounded-md mr-4"><a href="characters.html"
+                        class=" text-sm px-2">Characters</a></li>
+                <li> <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU&t=2s" target="_blank"
+                        class="inline py-2 px-2 font-medium text-white bg-yellow-600 rounded hover:bg-pink-600 transition duration-300">Watch</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <section class="overflow-hidden relative w-full h-full p-32 flex justify-center items-stretch ">
         <img id="bg" class="absolute top-0 left-0 w-full h-full object-cover" src="./img/starbg.jpeg" alt="starwars">
@@ -55,18 +109,16 @@
             <img id="stars" class="absolute top-0 left-0 w-full h-full object-cover " src="./img/starsss.jpeg" alt="">
             <img id="hansolo" class="absolute z-10 top-0 w-72 h-72" src="./img/hansolo.svg" alt="">
             <img class="relative -my-15" src="./img/mtfbwy.png" alt="">
-            <img class="relative -my-15" src="./img/mtfbwy.png" alt="">
-            <img class="relative -my-15" src="./img/mtfbwy.png" alt="">
         </div>
     </section>
 
-   
+
 
     <div class="absolute bg-yellow-400 w-full h-10 p-20 flex justify-center items-center">
 
         <footer class="footer">
-            <p class="credits text-black">
-                Star Wars &copy;&nbsp;Star Wars is a registered trademark of Lucasfilm Ltd.
+            <p class="credits text-black font-semibold">
+                Siddhartha Mishra &copy;&nbsp;DWIT, BCA 2024
             </p>
         </footer>
     </div>
@@ -83,6 +135,31 @@
         let imgdiv = document.getElementById("imgdiv");
         let lbsaber = document.getElementById("darth-vader-example");
         let menuBox = document.getElementById("men-items");
+        let mobileMenu = document.getElementById('men-items');
+        let width = visualViewport.width;
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        var onresize = function () {
+            width = document.body.clientWidth;
+            height = document.body.clientHeight;
+
+            if (width <= 767) {
+                menuBox.style.display = "none";
+                menu.removeAttribute("class", "hidden");
+
+            }
+            else {
+                menuBox.style.display = "flex";
+                menu.setAttribute("class", "hidden");
+
+            }
+        }
+        window.addEventListener("resize", onresize);
 
         window.addEventListener('scroll', function () {
             let value = window.scrollY;
@@ -95,14 +172,18 @@
         });
 
         lbsaber.addEventListener('click', function () {
-            if (this.checked) {
+            if (this.checked && width > 768) {
                 document.getElementById("audio").play();
                 menuBox.style.display = "flex";
+                menu.style.display = "none";
             } else {
                 document.getElementById("audio").pause();
                 menuBox.style.display = "none";
             }
         });
+
+
+
 
     </script>
 
