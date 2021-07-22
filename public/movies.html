@@ -21,31 +21,64 @@
     </audio>
 
     <!--Header-->
-    <header id="menuBox" class="absolute top-0 left-0 w-full py-1 px-4 flex justify-between items-center z-10000">
-        <!--diving main into two section. i) for logo/name    ii) for navbar-->
-        <div class=" transform rotate-90">
+    <nav id="menuBox" class="absolute top-0 w-full z-10000">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <!-- Website Logo -->
+                    <div class="transform rotate-90">
 
-            <div class="left-16 relative w-36 h-20 lightsaber">
-                <label for="darth-vader-example"></label>
-                <input type="checkbox" id="darth-vader-example" checked="checked">
-                <div class="switch"></div>
-                <div class="plasma vader"></div>
+                        <div class="left-16 relative w-36 h-20 lightsaber">
+                            <label for="darth-vader-example"></label>
+                            <input type="checkbox" id="darth-vader-example" checked="checked">
+                            <div class="switch"></div>
+                            <div class="plasma vader"></div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!-- Navbar items -->
+                <div id="men-items" class="hidden md:flex items-center space-x-3 men-item">
+
+                    <li class="ml-5 px-sm py-1 active:bg-green-700"><a href="index.html" class="">Home</a></li>
+                    <li class="ml-5 px-2 py-1 "><a href="characters.html">Characters</a>
+                    </li>
+                    <li class="ml-5 px-3 py-1 rounded font-semibold bg-yellow-600 text-gray-800 ">
+                        <button id="playButton" class="hover:text-white">Stop</button></a>
+                    </li>
+                </div>
+
             </div>
-
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex-row ">
+                <button class="outline-none mobile-menu-button">
+                    <svg class=" w-6 h-6 text-red-500 hover:text-yellow-500 " x-show="!showMenu" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
+        
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu bg-transparent absolute -mt-12  mb-7">
+            <ul class="flex left-5 ">
+                <li class="border-1 p-2 border-yellow-400 rounded-md ml-20 mr-4"><a href="index.html" class="">Home</a>
+                </li>
+                <li class="border-1 p-2 border-yellow-400 rounded-md mr-4"><a href="characters.html">Characters</a>
+                </li>
+                <li
+                    class=" py-2 px-2 font-medium text-white bg-yellow-600 rounded hover:bg-pink-600 transition duration-300">
+                    <button id="mobStop" class="hover:text-white">Stop</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-        <ul id="men-items" class="flex text-yellow-400 font-medium justify-center items-center login-box">
-            <li class="ml-5 px-sm py-1 active:bg-green-700"><a href="index.html" class="">Home</a></li>
-            <li class="ml-5 px-2 py-1 "><a href="characters.html">Characters</a>
-            </li>
-            <li class="ml-5 px-3 py-1 rounded font-semibold bg-yellow-600 text-gray-800 ">
-                <button id="playbutton" class="hover:text-white">Stop</button></a>
-            </li>
-            </div>
 
-        </ul>
-
-    </header>
 
 
 
@@ -71,21 +104,21 @@
         <div id="content">
             <details class="bg-yellow-400">
                 <summary class="text-black">Episode 1: The Phantom Menace</summary>
-                <p>
+                <p class="font-serif">
                     After a millennia, an ancient evil returns seeking revenge. Meanwhile, Jedi Knight Qui-Gon Jinn
                     discovers Anakin Skywalker: a young slave boy unusually strong with the Force.
                 </p>
             </details>
             <details class="bg-yellow-400">
                 <summary class="text-black">Episode 2: The Attack of the Clones</summary>
-                <p>
+                <p class="font-serif">
                     Following an assassination attempt on Senator Padmé Amidala, Jedi Knights Anakin Skywalker and
                     Obi-Wan Kenobi investigate a mysterious plot that could change the galaxy forever.
                 </p>
             </details>
             <details class="bg-yellow-400">
                 <summary class="text-black">Episode 3: Revenge of the Sith</summary>
-                <p>
+                <p class="font-serif">
                     The evil Darth Sidious enacts his final plan for unlimited power -- and the heroic Jedi Anakin
                     Skywalker must choose a side.
                 </p>
@@ -93,21 +126,21 @@
 
             <details class="bg-yellow-400">
                 <summary class="text-black">Episode 4: A New Hope</summary>
-                <p>
+                <p class="font-serif">
                     With the planet-destroying power of the Death Star, the Empire looks to cement its grip on the
                     galaxy. Meanwhile, farm boy Luke Skywalker rises to face his destiny.
                 </p>
             </details>
             <details class="bg-yellow-400">
                 <summary class="text-black">Episode 5: The Empire Strikes Back</summary>
-                <p>
+                <p class="font-serif">
                     While the Death Star has been destroyed, the battle between the Empire and the Rebel Alliance
                     rages on...and the evil Darth Vader continues his relentless search for Luke Skywalker.
                 </p>
             </details>
             <details class="bg-yellow-400">
                 <summary class="text-black">Episode 6: Return of the Jedi</summary>
-                <p>
+                <p class="font-serif">
                     Luke Skywalker leads a mission to rescue his friend Han Solo from the clutches of Jabba the
                     Hutt, while the Emperor seeks to destroy the Rebellion once and for all with a second dreaded
                     Death Star.
@@ -115,7 +148,7 @@
             </details>
             <details class="bg-yellow-400">
                 <summary class="text-black">Episode 7: The Force Awakens</summary>
-                <p>
+                <p class="font-serif">
                     Thirty years after the Battle of Endor, a new threat has risen in the form of the First Order
                     and the villainous Kylo Ren. Meanwhile, Rey, a young scavenger, discovers powers that will
                     change her life -- and possibly save the galaxy.
@@ -123,7 +156,7 @@
             </details>
             <details class="bg-yellow-400">
                 <summary class="text-black">Episode 8: The Last Jedi</summary>
-                <p>
+                <p class="font-serif">
                     Rey has found the legendary Luke Skywalker, hoping to be trained in the ways of the Force.
                     Meanwhile, the First Order seeks to destroy the remnants of the Resistance and rule the galaxy
                     unopposed.
@@ -131,7 +164,7 @@
             </details>
             <details class="bg-yellow-400">
                 <summary class="text-black">Episode 9: The Rise of Skywalker</summary>
-                <p>
+                <p class="font-serif">
                     A powerful enemy returns and Rey must face her destiny.
                 </p>
             </details>
@@ -140,9 +173,9 @@
 
 
 
-    <div id="foot" class="absolute bg-yellow-400 w-full h-10 p-20">
+    <div id="foot" class="absolute bg-yellow-400 opacity-80 w-full h-10 p-20">
 
-        <p class="credits text-black font-semibold flex justify-center items-center">
+        <p class="credits text-black font-sans font-normal flex justify-center items-center">
             Star Wars &copy;&nbsp;Star Wars is a registered trademark of Lucasfilm Ltd.
         </p>
     </div>
@@ -153,7 +186,7 @@
     <script>
 
         let lbsaber = document.getElementById("darth-vader-example");
-        let playbutton = document.getElementById("playbutton");
+        let playbutton = document.getElementById("playButton");
         let playmain = true;
         let menuBox = document.getElementById("men-items");
         let animation = true;
@@ -161,12 +194,39 @@
         let prelude = document.getElementById("prelude");
         let afterContent = document.getElementById("after");
         let foot = document.getElementById("foot");
+        let mobileMenu = document.getElementById('men-items');
+        let width = visualViewport.width;
+        let mobStop = document.getElementById("mobStop");
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        var onresize = function () {
+            width = document.body.clientWidth;
+            height = document.body.clientHeight;
+
+            if (width <= 767) {
+                menuBox.style.display = "none";
+                menu.removeAttribute("class", "hidden");
+
+            }
+            else {
+                menuBox.style.display = "flex";
+                menu.setAttribute("class", "hidden");
+
+            }
+        }
+        window.addEventListener("resize", onresize);
+
 
 
         lbsaber.addEventListener('click', function () {
-            if (this.checked) {
+            if (this.checked && width > 768) {
                 document.getElementById("audio").play();
                 menuBox.style.display = "flex";
+                menu.style.display = "none";
             } else {
                 document.getElementById("audio").pause();
                 menuBox.style.display = "none";
@@ -179,6 +239,7 @@
             if (this.click && playmain == true) {
                 document.getElementById("main").play();
                 this.innerText = "Stop";
+                mobStop.innerHTML = "Stop";
                 introContent.classList.remove("pause");
                 prelude.classList.remove("pause");
                 introContent.style.display = "block";
@@ -191,6 +252,7 @@
                 document.getElementById("main").pause();
                 document.getElementById("main").currentTime = 0;
                 this.innerText = "Play";
+                mobStop.innerText = "Play";
                 introContent.classList.add("pause", "skipcontent");
                 prelude.classList.add("pause", "skipcontent");
                 introContent.style.display = "none";
@@ -201,6 +263,35 @@
             }
         });
 
+        mobStop.addEventListener('click', function () {
+            playmain = !playmain;
+            animation = !animation;
+            if (this.click && playmain == true) {
+                document.getElementById("main").play();
+                this.innerText = "Stop";
+                mobStop.innerHTML = "Stop";
+                introContent.classList.remove("pause");
+                prelude.classList.remove("pause");
+                introContent.style.display = "block";
+                prelude.style.display = "block";
+                afterContent.style.display = "none";
+                foot.style.display = "none";
+
+
+            } else {
+                document.getElementById("main").pause();
+                document.getElementById("main").currentTime = 0;
+                this.innerText = "Play";
+                mobStop.innerText = "Play";
+                introContent.classList.add("pause", "skipcontent");
+                prelude.classList.add("pause", "skipcontent");
+                introContent.style.display = "none";
+                prelude.style.display = "none";
+                afterContent.style.display = "block";
+                foot.style.display = "block";
+
+            }
+        });
         foot.style.display = "none";
         afterContent.style.display = "none";
 
