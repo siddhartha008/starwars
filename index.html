@@ -232,7 +232,6 @@
         let visible = true;
 
 
-
         btn.addEventListener("click", () => {
             visible = !visible;
             if (visible) {
@@ -272,7 +271,7 @@
 
         });
 
-        lbsaber.addEventListener('click', function () {
+        lbsaber.addEventListener('click touchstart', function () {
             if (this.checked && width > 768) {
                 document.getElementById("audio").play();
                 menuBox.style.display = "flex";
