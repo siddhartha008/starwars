@@ -273,12 +273,10 @@
 
         lbsaber.addEventListener('click touchstart', function () {
             document.getElementById("audio").play();
-            if (this.checked) {
-                document.getElementById("audio").play();
+            if (width > 768) {
                 menuBox.style.display = "flex";
                 menu.style.display = "none";
             } else {
-                document.getElementById("audio").pause();
                 menuBox.style.display = "none";
             }
         });
