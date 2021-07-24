@@ -12,9 +12,7 @@
 
 <body class="min-h-screen overflow-x-hidden">
     <!-- Audio -->
-    <audio id="main" preload="auto" autoplay>
-        <source src="starwars.mp3">
-    </audio>
+    
 
     <audio id="audio" preload="auto">
         <source src="lsaber.mp3">
@@ -40,10 +38,10 @@
                 </div>
                 <!-- Navbar items -->
                 <div id="men-items" class="hidden md:flex items-center space-x-3 men-item">
-                    <a href="index.html"
-                        class="py-2 px-2 font-light text-yellow-500 transition duration-300">Home</a>
+                    <a href="index.html" class="py-2 px-2 font-light text-yellow-500 transition duration-300">Home</a>
                     <a href="characters.html" class="py-2 px-2 text-yellow-500 transition duration-300">Characters</a>
-                    <button id="playButton" class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
+                    <button id="playButton"
+                        class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex ">
@@ -58,13 +56,14 @@
             </div>
         </div>
         <!-- mobile menu -->
-        <div class="hidden mobile-menu bg-transparent absolute -mt-4">
+        <div id="moviesmmenu" class="hidden mobile-menu bg-transparent absolute -mt-4">
             <ul class="flex left-5 ">
                 <li class=" border-1 border-yellow-400 rounded-md ml-28 mr-4"><a href="index.html"
                         class="text-sm px-2 text-white">Home</a></li>
                 <li class="border-1 border-yellow-400 rounded-md mr-4"><a href="characters.html"
                         class=" text-sm px-2">Characters</a></li>
-                <li> <button id="mobStop" class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
+                <li> <button id="mobStop"
+                        class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
 
                 </li>
             </ul>
@@ -167,7 +166,7 @@
 
 
 
-    <div id="foot" class="absolute bg-yellow-400 opacity-80 w-full h-10 p-20">
+    <div id="mfoot" class="absolute bg-yellow-400 opacity-80 w-full h-10 p-20">
 
         <p class="credits text-black font-sans font-normal flex justify-center items-center">
             Star Wars &copy;&nbsp;Star Wars is a registered trademark of Lucasfilm Ltd.
@@ -178,6 +177,15 @@
 
 
     <script>
+        const soundEffect = new Audio();
+
+        // onClick of first interaction on page before I need the sounds
+        soundEffect.play();
+
+        // later on when you actually want to play a sound at any point without user interaction
+        soundEffect.src = 'starwars.mp3';
+        soundEffect.play();
+
 
         let lbsaber = document.getElementById("darth-vader-example");
         let playbutton = document.getElementById("playButton");
@@ -187,7 +195,7 @@
         let introContent = document.getElementById("introContent");
         let prelude = document.getElementById("prelude");
         let afterContent = document.getElementById("after");
-        let foot = document.getElementById("foot");
+        let foot = document.getElementById("mfoot");
         let mobileMenu = document.getElementById('men-items');
         let width = visualViewport.width;
         let mobStop = document.getElementById("mobStop");
@@ -304,7 +312,7 @@
             foot.style.display = "block";
         });
 
-       
+
 
 
     </script>
