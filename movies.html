@@ -12,7 +12,9 @@
 
 <body class="min-h-screen overflow-x-hidden">
     <!-- Audio -->
-    
+    <audio id="main" preload="auto" autoplay>
+        <source src="starwars.mp3">
+    </audio>
 
     <audio id="audio" preload="auto">
         <source src="lsaber.mp3">
@@ -38,10 +40,10 @@
                 </div>
                 <!-- Navbar items -->
                 <div id="men-items" class="hidden md:flex items-center space-x-3 men-item">
-                    <a href="index.html" class="py-2 px-2 font-light text-yellow-500 transition duration-300">Home</a>
+                    <a href="index.html"
+                        class="py-2 px-2 font-light text-yellow-500 transition duration-300">Home</a>
                     <a href="characters.html" class="py-2 px-2 text-yellow-500 transition duration-300">Characters</a>
-                    <button id="playButton"
-                        class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
+                    <button id="playButton" class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex ">
@@ -62,8 +64,7 @@
                         class="text-sm px-2 text-white">Home</a></li>
                 <li class="border-1 border-yellow-400 rounded-md mr-4"><a href="characters.html"
                         class=" text-sm px-2">Characters</a></li>
-                <li> <button id="mobStop"
-                        class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
+                <li> <button id="mobStop" class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
 
                 </li>
             </ul>
@@ -177,15 +178,6 @@
 
 
     <script>
-        const soundEffect = new Audio();
-
-        // onClick of first interaction on page before I need the sounds
-        soundEffect.play();
-
-        // later on when you actually want to play a sound at any point without user interaction
-        soundEffect.src = 'starwars.mp3';
-        soundEffect.play();
-
 
         let lbsaber = document.getElementById("darth-vader-example");
         let playbutton = document.getElementById("playButton");
@@ -312,7 +304,7 @@
             foot.style.display = "block";
         });
 
-
+       
 
 
     </script>
