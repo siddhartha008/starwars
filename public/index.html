@@ -17,37 +17,12 @@
         <source src="../lsaber.mp3">
     </audio>
 
-    <!--Header-->
-    <!-- <nav id="menuBox" class="absolute top-0 left-0 w-full py-1 px-4 flex md:justify-between items-center z-10000"> -->
-    <!--diving main into two section. i) for logo/name    ii) for navbar-->
-    <!-- <div class=" transform rotate-90">
-
-            <div class="left-16 relative w-36 h-20 lightsaber">
-                <label for="darth-vader-example"></label>
-                <input type="checkbox" id="darth-vader-example" checked="checked">
-                <div class="switch"></div>
-                <div class="plasma vader"></div>
-            </div>
-
-        </div>
-
-        <ul id="men-items"
-            class="hidden md:flex md:flex-row text-yellow-400 font-medium justify-center items-center login-box">
-            <li class="ml-5 px-sm py-1 active:bg-green-700"><a href="movies.html" class="">Movies</a></li>
-            <li class="ml-5 px-2 py-1 "><a href="characters.html">Characters</a>
-            </li>
-            <li class="ml-5 px-3 py-1 rounded font-semibold bg-yellow-600 text-gray-800 ">
-                <button id="playbutton" class="hover:text-white"><a href="https://www.youtube.com/watch?v=5UnjrG_N8hU"
-                        target="_blank">Watch</a></button>
-            </li>
-            </div>
-        </ul>
-    </nav> -->
 
     <nav id="menuBox" class="absolute top-0 w-full z-10000">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between">
-                <div class="flex space-x-7">
+
+                <div id="lbsb" class="flex space-x-7">
                     <!-- Website Logo -->
                     <div class="transform rotate-90">
 
@@ -57,11 +32,9 @@
                             <div class="switch"></div>
                             <div class="plasma vader"></div>
                         </div>
-
-
                     </div>
-
                 </div>
+
                 <!-- Navbar items -->
                 <div id="men-items" class="hidden md:flex items-center space-x-3 men-item">
                     <a href="movies.html"
@@ -71,7 +44,7 @@
                         class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Watch</a>
                 </div>
                 <!-- Mobile menu button -->
-                <div class="md:hidden flex ">
+                <div id="mmbt" class="md:hidden flex ">
                     <button class="outline-none mobile-menu-button">
                         <svg class=" w-6 h-6 text-red-500 hover:text-yellow-500 " x-show="!showMenu" fill="none"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
@@ -83,7 +56,7 @@
             </div>
         </div>
         <!-- mobile menu -->
-        <div class="hidden mobile-menu bg-transparent absolute -mt-4">
+        <div id="mmmenu" class="hidden mobile-menu bg-transparent absolute -mt-4">
             <ul class="flex left-5 ">
                 <li class=" border-1 border-yellow-400 rounded-md ml-28 mr-4"><a href="movies.html"
                         class="text-sm px-2 text-white">Movies</a></li>
@@ -96,17 +69,17 @@
         </div>
     </nav>
 
-    <section class="overflow-hidden relative w-full h-full p-32 flex justify-center items-stretch ">
+    <section id="fsec" class="overflow-hidden relative w-full h-full p-32 flex justify-center items-stretch ">
         <img id="bg" class="absolute top-0 left-0 w-full h-full object-cover" src="./img/starbg.jpeg" alt="starwars">
         <div id="name" class="absolute z-10 top-24">
             <h1 class="maythe font-semibold ">MESA</h1>
             <h1 class="maythe font-semibold ">SID</h1>
         </div>
-        <img id="cloud" class="absolute z-10  bottom-2" src="./img/badal.svg" alt="cloud">
+        <img id="cloud" class="absolute z-10 bottom-2" src="./img/badal.svg" alt="cloud">
         <img src="./img/yodasvg.svg" id="logoLeft" class="absolute z-10 bottom-12 w-36 h-36" alt="siddhartha-img">
     </section>
 
-    <section>
+    <section id="ssec">
         <div class="relative w-full p-32 flex justify-center items-stretch">
             <img id="stars" class="absolute top-0 left-0 w-full h-full object-cover " src="./img/starsss.jpeg" alt="">
             <img id="hansolo" class="absolute z-10 top-0 w-72 h-72" src="./img/hansolo.svg" alt="">
@@ -121,8 +94,8 @@
 
 
 
-    <div class=" bg-black opacity-80 w-full h-3/6 z-10000">
-        <div id="bb88" class="">
+    <div id="foot" class=" bg-black opacity-80 w-full h-3/6 z-10000">
+        <div id="bb88">
             <div id="bb8robot" class="robot">
                 <svg version="1.1" id="bb8Body" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200"
@@ -233,8 +206,10 @@
                     enable-background="new 0 0 200 200" xml:space="preserve">
                     <ellipse id="shadow" opacity="0.2" fill="#1D1D1B" cx="99.4" cy="182.7" rx="97" ry="12.7" />
                 </svg>
-                <p class="absolute top-80 text-yellow-500 ">&nbsp;&nbsp; Siddhartha Mishra</p>
-
+                <p id="sidfoot" class="absolute top-80 text-yellow-500 ">&nbsp;&nbsp; Siddhartha Mishra</p>
+                <button><a
+                        id="toptop" class="px-2 absolute top-80 -right-16 text-white bg-yellow-600 rounded hover:bg-pink-600 transition duration-300"
+                        href="#top">Top</a></button>
             </div>
         </div>
 
@@ -291,7 +266,7 @@
                 hansolo.style.right = value * 0.5 + 'px';
                 hansolo.style.transform = 'translateX(' + (value * 0.5) + 'px) translateY(' + (value * 0.5) + 'px)';
             } else {
-                hansolo.style.right = value * 1.10 + 'px';
+                hansolo.style.right = value * 1.75 + 'px';
                 hansolo.style.transform = 'translateX(' + (value * 0.5) + 'px) translateY(' + (value * 0.5) + 'px)';
             }
 
@@ -307,6 +282,13 @@
                 menuBox.style.display = "none";
             }
         });
+
+        $("a[href='#top']").click(function () {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+
+
 
     </script>
 </body>

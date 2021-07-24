@@ -20,7 +20,6 @@
         <source src="../lsaber.mp3">
     </audio>
 
-    <!--Header-->
     <nav id="menuBox" class="absolute top-0 w-full z-10000">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between">
@@ -41,42 +40,37 @@
                 </div>
                 <!-- Navbar items -->
                 <div id="men-items" class="hidden md:flex items-center space-x-3 men-item">
-
-                    <li class="ml-5 px-sm py-1 active:bg-green-700"><a href="index.html" class="">Home</a></li>
-                    <li class="ml-5 px-2 py-1 "><a href="characters.html">Characters</a>
-                    </li>
-                    <li class="ml-5 px-3 py-1 rounded font-semibold bg-yellow-600 text-gray-800 ">
-                        <button id="playButton" class="hover:text-white">Stop</button></a>
-                    </li>
+                    <a href="index.html"
+                        class="py-2 px-2 font-light text-yellow-500 transition duration-300">Home</a>
+                    <a href="characters.html" class="py-2 px-2 text-yellow-500 transition duration-300">Characters</a>
+                    <button id="playButton" class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
                 </div>
-
-            </div>
-            <!-- Mobile menu button -->
-            <div class="md:hidden flex-row ">
-                <button class="outline-none mobile-menu-button">
-                    <svg class=" w-6 h-6 text-red-500 hover:text-yellow-500 " x-show="!showMenu" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex ">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class=" w-6 h-6 text-red-500 hover:text-yellow-500 " x-show="!showMenu" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-        
         <!-- mobile menu -->
-        <div class="hidden mobile-menu bg-transparent absolute -mt-12  mb-7">
+        <div class="hidden mobile-menu bg-transparent absolute -mt-4">
             <ul class="flex left-5 ">
-                <li class="border-1 p-2 border-yellow-400 rounded-md ml-20 mr-4"><a href="index.html" class="">Home</a>
-                </li>
-                <li class="border-1 p-2 border-yellow-400 rounded-md mr-4"><a href="characters.html">Characters</a>
-                </li>
-                <li
-                    class=" py-2 px-2 font-medium text-white bg-yellow-600 rounded hover:bg-pink-600 transition duration-300">
-                    <button id="mobStop" class="hover:text-white">Stop</button></a>
+                <li class=" border-1 border-yellow-400 rounded-md ml-28 mr-4"><a href="index.html"
+                        class="text-sm px-2 text-white">Home</a></li>
+                <li class="border-1 border-yellow-400 rounded-md mr-4"><a href="characters.html"
+                        class=" text-sm px-2">Characters</a></li>
+                <li> <button id="mobStop" class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Stop</button></a>
+
                 </li>
             </ul>
         </div>
     </nav>
+
 
 
 
@@ -199,9 +193,19 @@
         let mobStop = document.getElementById("mobStop");
         const btn = document.querySelector("button.mobile-menu-button");
         const menu = document.querySelector(".mobile-menu");
+        let visible = true;
+
         btn.addEventListener("click", () => {
-            menu.classList.toggle("hidden");
+            visible = !visible;
+            if (visible) {
+                menu.style.display = "none";
+            }
+            else {
+                menu.style.display = "block";
+            }
         });
+
+
 
         var onresize = function () {
             width = document.body.clientWidth;
@@ -209,16 +213,14 @@
 
             if (width <= 767) {
                 menuBox.style.display = "none";
-                menu.removeAttribute("class", "hidden");
-
             }
             else {
                 menuBox.style.display = "flex";
-                menu.setAttribute("class", "hidden");
-
+                menu.style.display = "none";
             }
         }
         window.addEventListener("resize", onresize);
+
 
 
 
@@ -268,6 +270,7 @@
             animation = !animation;
             if (this.click && playmain == true) {
                 document.getElementById("main").play();
+                playbutton.innerHTML = "Stop";
                 this.innerText = "Stop";
                 mobStop.innerHTML = "Stop";
                 introContent.classList.remove("pause");
@@ -283,6 +286,7 @@
                 document.getElementById("main").currentTime = 0;
                 this.innerText = "Play";
                 mobStop.innerText = "Play";
+                playbutton.innerHTML = "Play";
                 introContent.classList.add("pause", "skipcontent");
                 prelude.classList.add("pause", "skipcontent");
                 introContent.style.display = "none";
@@ -299,6 +303,8 @@
             afterContent.style.display = "block";
             foot.style.display = "block";
         });
+
+       
 
 
     </script>
