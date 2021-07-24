@@ -272,11 +272,12 @@
         });
 
         lbsaber.addEventListener('click touchstart', function () {
-            document.getElementById("audio").play();
-            if (width > 768) {
+            if (this.checked) {
+                document.getElementById("audio").play();
                 menuBox.style.display = "flex";
                 menu.style.display = "none";
             } else {
+                document.getElementById("audio").pause();
                 menuBox.style.display = "none";
             }
         });
