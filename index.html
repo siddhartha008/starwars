@@ -271,8 +271,8 @@
 
         });
 
-        lbsaber.addEventListener('click touchstart', function () {
-            if (this.checked) {
+        lbsaber.addEventListener('click', function () {
+            if (this.checked && width > 768) {
                 document.getElementById("audio").play();
                 menuBox.style.display = "flex";
                 menu.style.display = "none";
