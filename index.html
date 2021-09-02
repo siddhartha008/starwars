@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Wars</title>
+    <title>Siddhartha Mishra</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/svg" href="./img/yodasvg.svg" />
+    <script src="app.js" defer="true"></script>
 </head>
 
 <body class="min-h-screen overflow-x-hidden">
@@ -37,11 +38,10 @@
 
                 <!-- Navbar items -->
                 <div id="men-items" class="hidden md:flex items-center space-x-3 men-item">
-                    <a href="movies.html"
-                        class="py-2 px-2 font-light text-yellow-500 transition duration-300">Movies</a>
-                    <a href="characters.html" class="py-2 px-2 text-yellow-500 transition duration-300">Characters</a>
-                    <a href="https://www.youtube.com/channel/UCZGYJFUizSax-yElQaFDp5Q" target="_blank"
-                        class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600  transition duration-300">Watch</a>
+                    <a href="#about" class="py-2 px-2 font-light text-yellow-500 transition duration-300">About</a>
+                    <a href="#portfolio" class="py-2 px-2 text-yellow-500 transition duration-300">Portfolio</a>
+                    <a href="img/Resume_Siddhartha.pdf" target="_blank" download
+                        class="py-2 px-2 text-white bg-yellow-600 rounded hover:bg-pink-600 transition duration-300">Download CV</a>
                 </div>
                 <!-- Mobile menu button -->
                 <div id="mmbt" class="md:hidden flex ">
@@ -59,11 +59,11 @@
         <div id="mmmenu" class="hidden mobile-menu bg-transparent absolute -mt-4">
             <ul class="flex left-5 ">
                 <li class=" border-1 border-yellow-400 rounded-md ml-28 mr-4"><a href="movies.html"
-                        class="text-sm px-2 text-white">Movies</a></li>
+                        class="text-sm px-2 text-white">About</a></li>
                 <li class="border-1 border-yellow-400 rounded-md mr-4"><a href="characters.html"
-                        class=" text-sm px-2">Characters</a></li>
+                        class=" text-sm px-2">Portfolio</a></li>
                 <li> <a href="https://www.youtube.com/channel/UCZGYJFUizSax-yElQaFDp5Q" target="_blank"
-                        class=" py-2 px-2 font-medium text-white bg-yellow-600 rounded hover:bg-pink-600 transition duration-300">Watch</a>
+                        class=" py-2 px-2 font-medium text-white bg-yellow-600 rounded hover:bg-pink-600 transition duration-300">CV</a>
                 </li>
             </ul>
         </div>
@@ -72,8 +72,8 @@
     <section id="fsec" class="overflow-hidden relative w-full h-full p-32 flex justify-center items-stretch ">
         <img id="bg" class="absolute top-0 left-0 w-full h-full object-cover" src="./img/starbg.jpeg" alt="starwars">
         <div id="name" class="absolute z-10 top-24">
-            <h1 class="maythe font-semibold ">STAR</h1>
-            <h1 class="maythe font-semibold ">WARS</h1>
+            <h1 class="maythe font-semibold ">MESA</h1>
+            <h1 class="maythe font-semibold ">SID</h1>
         </div>
         <img id="cloud" class="absolute z-10 bottom-2" src="./img/badal.svg" alt="cloud">
         <img src="./img/yodasvg.svg" id="logoLeft" class="absolute z-10 bottom-12 w-36 h-36" alt="siddhartha-img">
@@ -206,7 +206,7 @@
                     enable-background="new 0 0 200 200" xml:space="preserve">
                     <ellipse id="shadow" opacity="0.2" fill="#1D1D1B" cx="99.4" cy="182.7" rx="97" ry="12.7" />
                 </svg>
-                <p id="sidfoot" class="absolute top-80 text-yellow-500 ">&nbsp;&nbsp; Siddhartha Mishra</p>
+                <p id="sidfoot" class="absolute top-80 text-yellow-500">&nbsp;&nbsp;Siddhartha Mishra</p>
                 <button><a id="toptop"
                         class="px-2 absolute top-80 -right-16 text-white bg-yellow-600 rounded hover:bg-pink-600 transition duration-300"
                         href="#top">Top</a></button>
@@ -216,81 +216,7 @@
 
     </div>
 
-    <script>
-        let bg = document.getElementById('bg');
-        let names = document.getElementById('name');
-        let cloud = document.getElementById('cloud');
-        let hansolo = document.getElementById('hansolo');
-        let header = document.querySelector("header");
-        let logo = document.getElementById("logoLeft");
-        let lbsaber = document.getElementById("darth-vader-example");
-        let menuBox = document.getElementById("men-items");
-        let mobileMenu = document.getElementById('men-items');
-        let width = visualViewport.width;
-        const btn = document.querySelector("button.mobile-menu-button");
-        const menu = document.querySelector(".mobile-menu");
-        let visible = true;
-        let lsaberSound = false;
-
-
-        btn.addEventListener("click", () => {
-            visible = !visible;
-            if (visible) {
-                menu.style.display = "none";
-            }
-            else {
-                menu.style.display = "block";
-            }
-        });
-
-        var onresize = function () {
-            width = document.body.clientWidth;
-            height = document.body.clientHeight;
-
-            if (width <= 767) {
-                menuBox.style.display = "none";
-            }
-            else {
-                menuBox.style.display = "flex";
-                menu.style.display = "none";
-            }
-        }
-        window.addEventListener("resize", onresize);
-
-        window.addEventListener('scroll', function () {
-            let value = window.scrollY;
-            cloud.style.left = value * 1.25 + 'px';
-            names.style.top = 85 + value * 1.05 + 'px';
-            bg.style.top = value * 0.5 + 'px';
-            if (width <= 767) {
-                hansolo.style.right = value * 0.5 + 'px';
-                hansolo.style.transform = 'translateX(' + (value * 0.5) + 'px) translateY(' + (value * 0.5) + 'px)';
-            } else {
-                hansolo.style.right = value * 1.75 + 'px';
-                hansolo.style.transform = 'translateX(' + (value * 0.5) + 'px) translateY(' + (value * 0.5) + 'px)';
-            }
-
-        });
-
-        lbsaber.addEventListener('click', function () {
-            if (this.checked && width > 768) {
-                document.getElementById("audio").play();
-                menuBox.style.display = "flex";
-                menu.style.display = "none";
-            } else {
-                document.getElementById("audio").pause();
-                menuBox.style.display = "none";
-            }
-        });
-
-        $("a[href='#top']").click(function () {
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
-        });
-
-
-
-    </script>
+    
 </body>
 
 </html>
